@@ -1,7 +1,14 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <main>
-      <h1>Home</h1>
+    <main className="py-4 px-48">
+      <Link
+        className="bg-teal-700 text-black font-medium py-2 px-4 rounded-md"
+        href={"/dashboard"}
+      >
+        Go to the dashboard
+      </Link>
     </main>
   );
 }

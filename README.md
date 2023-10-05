@@ -34,4 +34,24 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
 # fullstack-next-typescript
+
+What I have used in this project:
+
+```bash
+Next.js
+# https://nextjs.org/
+
+Tailwind
+# https://tailwindcss.com/
+
+Railway
+# https://railway.app/
+
+Prisma
+# https://www.prisma.io/
+
+NextAuth.js
+# https://next-auth.js.org/
+```
