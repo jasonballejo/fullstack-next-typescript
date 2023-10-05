@@ -1,14 +1,32 @@
 import Link from "next/link";
+import FormPost from "./Form";
 
-export default function Home() {
+export const revalidate = 0;
+
+async function getPosts() {
+  const res = await fetch(`${process.env.BASE_URL}/api/getPosts`);
+  // The return value is *not* serialized
+  // You can return Date, Map, Set, etc.
+
+  if (!res.ok) {
+    console.log(res);
+  }
+  return res.json();
+}
+
+export default async function Home() {
+  // Do this to specific the data you are returning
+  const data: { id: number; title: string }[] = await getPosts();
   return (
     <main className="py-4 px-48">
-      <Link
-        className="bg-teal-700 text-black font-medium py-2 px-4 rounded-md"
-        href={"/dashboard"}
-      >
-        Go to the dashboard
-      </Link>
+      <div className="my-10">
+        <FormPost />
+      </div>
+      {data.map((post) => (
+        <h1 key={post.id} className="text-3xl py-6">
+          {post.title}
+        </h1>
+      ))}
     </main>
   );
 }
